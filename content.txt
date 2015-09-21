@@ -1,17 +1,17 @@
-Muss installiert sein:
+Have to be installed:
 Netbeans 8 + GlassFish Server
 JDK 8
 ??? JBoss 1.6.0 - final ???
 
 
-Für Aufgaben:
+For Tasks:
 pom file
-Klassen
-Test Klassen
+Classes
+Test Classes
 
 
 Inhalt:
-Unit Tests auf vers. embedded Servern
+Unit Tests on dif. embedded Servers
 Persistence Tests (Hibernate)
 
 Functional Testing
