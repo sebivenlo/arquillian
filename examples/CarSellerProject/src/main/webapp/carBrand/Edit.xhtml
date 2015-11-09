@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCarBrandTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCarBrandLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{carBrandController.selected.description}" title="#{bundle.EditCarBrandTitle_description}" />
+                    <h:outputLabel value="#{bundle.EditCarBrandLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{carBrandController.selected.name}" title="#{bundle.EditCarBrandTitle_name}" />
+                    <h:outputLabel value="#{bundle.EditCarBrandLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{carBrandController.selected.id}" title="#{bundle.EditCarBrandTitle_id}" />
+                </h:panelGrid>
+                <h:commandLink action="#{carBrandController.update}" value="#{bundle.EditCarBrandSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCarBrandViewLink}"/>
+                <br />
+                <h:commandLink action="#{carBrandController.prepareList}" value="#{bundle.EditCarBrandShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCarBrandIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
