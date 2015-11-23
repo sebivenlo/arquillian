@@ -11,21 +11,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author techlogic
  */
+@Entity
 public class Car implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Color color;
-   
+
+    @ManyToOne
     private CarBrand brand;
+
     private String name;
 
     public Car(Color color, CarBrand brand, String name) {
@@ -37,7 +42,7 @@ public class Car implements Serializable {
     public Car() {
         this.brand = new CarBrand();
         this.color = Color.BLACK;
-        this.name  = "";
+        this.name = "";
     }
 
     public String getName() {
