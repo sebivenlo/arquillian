@@ -40,3 +40,4 @@ hs_err_pid*
 /examples/CarSellerProject/CarSellerProject-ejb/target/
 /examples/CarSellerProject/CarSellerProject-ear/target/
 /examples/CarSellerProject/target/
+/examples/PetCatalog/nbproject/private/

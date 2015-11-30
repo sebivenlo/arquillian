@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.arquillian.example;
+	package org.arquillian.example;
 
 import javax.inject.Inject;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -38,7 +38,7 @@ public class GreeterTest {
         JavaArchive jar = ShrinkWrap.create(JavaArchive.class)
             .addClasses(Greeter.class, PhraseBuilder.class)
             .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-        // System.out.println(jar.toString(true));
+
         return jar;
     }
 
