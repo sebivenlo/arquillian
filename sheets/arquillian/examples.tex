@@ -59,8 +59,22 @@
 
 \begin{frame}{Arquillian persistence test}
 \lstset{basicstyle={\tiny},upquote=true,language=Java}
-  \lstinputlisting[firstline=69,lastline=94,title={Persistance shrinkwrapper}]{../code/arquillian-persistence-tutorial/src/test/java/org/arquillian/example/GamePersistenceTest.java}
+  \lstinputlisting[firstline=69,lastline=94,title={Persistance test}]{../code/arquillian-persistence-tutorial/src/test/java/org/arquillian/example/GamePersistenceTest.java}
+\end{frame}
 
+
+\begin{frame}{Arquillian persistence test}
+	\begin{itemize}
+		\item {\textbf{UserTransactions}} manages the database transactions
+		\item {\textbf{@PersistanceContext EntityManager}} dependency injection of the EntityManager
+		\item {\textbf{@Before}} the test 
+			\begin{enumerate}
+				\item Clean database state
+				\item Insert sample data
+				\item Begin transaction
+			\end{enumerate}
+		\item {\textbf{@After}} the test commit the transaction
+	\end{itemize}
 \end{frame}
 
 \subsection[Functional test]{Arquillian functional test}
@@ -78,7 +92,7 @@
 
 \begin{frame}{Arquillian functional test}
 \lstset{basicstyle={\tiny},upquote=true,language=Java}
-  \lstinputlisting[firstline=58,lastline=75,title={Functional shrinkwrapper}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
+  \lstinputlisting[firstline=58,lastline=75,title={Functional test}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
  \begin{itemize}
  	\item {\textbf{@Drone}} dependency injection of the browser controller
  	\item {\textbf{@ArquillianResource}} inject the URL 
