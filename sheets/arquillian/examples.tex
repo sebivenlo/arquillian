@@ -48,9 +48,13 @@
 \end{frame}
 \subsection[Persistence test]{Arquillian persistence test}
 \begin{frame}{Arquillian persistence test}
-\lstset{basicstyle={\scriptsize},upquote=true,language=Java}
+\lstset{basicstyle={\tiny},upquote=true,language=Java}
   \lstinputlisting[firstline=52,lastline=61,title={Persistance shrinkwrapper}]{../code/arquillian-persistence-tutorial/src/test/java/org/arquillian/example/GamePersistenceTest.java}
-
+\begin{itemize}
+	\item {\textbf {WebArchive}} a class representing the structure of a war file
+	\item {\textbf {test-persistence.xml}} copy the used persistence.xml into the archive
+	\item {\textbf {jbossas-ds.xml}} add the server config as WEB-INF resource
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Arquillian persistence test}
@@ -62,11 +66,24 @@
 \subsection[Functional test]{Arquillian functional test}
 \begin{frame}{Arquillian functional test}
 \lstset{basicstyle={\tiny},upquote=true,language=Java}
-  \lstinputlisting[firstline=47,lastline=61,title={Functional shrinkwrapper}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
+  \lstinputlisting[firstline=47,lastline=56,title={Functional shrinkwrapper}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
+  \begin{itemize}
+  	\item {\textbf{@Deployment(testable = false)}} global deployment on client
+  	\item {\textbf{@RunAsClient}} run method on client
+  	\item {\textbf{addAsWebResource}} add html files needed for the test to the archive
+  	\item {\textbf{merge}} add a new generic shrinkwrapper which contains all html files to the archive
+  \end{itemize}
+  
 \end{frame}
 
 \begin{frame}{Arquillian functional test}
 \lstset{basicstyle={\tiny},upquote=true,language=Java}
-  \lstinputlisting[firstline=62,lastline=79,title={Functional shrinkwrapper}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
+  \lstinputlisting[firstline=58,lastline=75,title={Functional shrinkwrapper}]{../code/arquillian-drone-tutorial/src/test/java/org/arquillian/example/ui/LoginScreenSeleniumTest.java}
+ \begin{itemize}
+ 	\item {\textbf{@Drone}} dependency injection of the browser controller
+ 	\item {\textbf{@ArquillianResource}} inject the URL 
+ 	\item {\textbf{@FindBy}} find dom object by id or css
+ 	\item {\textbf{@FindByJQuery}} find dom object by jQuery expressions
+ \end{itemize}
 \end{frame}
 

@@ -49,14 +49,10 @@ public class LoginScreenSeleniumTest {
         return ShrinkWrap.create(WebArchive.class, "login.war")
             .addClasses(LoginController.class, User.class, Credentials.class)
             // .addAsWebResource(new File(WEBAPP_SRC), "login.xhtml")
-            // .addAsWebResource(new File(WEBAPP_SRC), "home.xhtml")
             .merge(ShrinkWrap.create(GenericArchive.class).as(ExplodedImporter.class)
-                .importDirectory(WEBAPP_SRC).as(GenericArchive.class),
-                "/", Filters.include(".*\\.xhtml$"))
+             .importDirectory(WEBAPP_SRC).as(GenericArchive.class),"/", Filters.include(".*\\.xhtml$"))
             .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
-            .addAsWebInfResource(
-                new StringAsset("<faces-config version=\"2.0\"/>"),
-                "faces-config.xml");
+            .addAsWebInfResource(new StringAsset("<faces-config version=\"2.0\"/>"),"faces-config.xml");
     }
     
     @Drone
